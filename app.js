@@ -303,3 +303,80 @@ console.log(`O carro é um ${car['brand']} ${car['nome']}`)
   - Depois imprima um relatório completo sobre os pacientes.
 */
 
+// Função para criar um novo paciente
+function criarPaciente(nome, idade, cpf, sintoma, classificacaoRisco) {
+    return {
+        nome: nome,
+        idade: idade,
+        cpf: cpf,
+        sintoma: sintoma,
+        classificacaoRisco: classificacaoRisco,
+        definirSituacaoRisco: function() {
+            if (this.classificacaoRisco === 1 || this.classificacaoRisco === 2) {
+                return 'Risco leve';
+            } else if (this.classificacaoRisco === 3 || this.classificacaoRisco === 4) {
+                return 'Risco moderado';
+            } else if (this.classificacaoRisco === 5) {
+                return 'Grave risco';
+            } else {
+                return 'Classificação de risco inválida'
+            }
+        }
+    }
+}
+
+let bancoDeDadosPacientes = [];
+
+let paciente1 = criarPaciente('João', 30, '123.456.789-00', 'Febre', 2);
+let paciente2 = criarPaciente('Maria', 45, '987.654.321-00', 'Dor de cabeça', 4);
+let paciente3 = criarPaciente('Carlos', 60, '456.789.123-00', 'Dificuldade respiratória', 5);
+let paciente4 = criarPaciente('João', 30, '123.456.789-00', 'Febre', 2);
+let paciente5 = criarPaciente('Maria', 45, '987.654.321-00', 'Dor de cabeça', 4);
+let paciente6 = criarPaciente('Carlos', 60, '456.789.123-00', 'Dificuldade respiratória', 5);
+let paciente7 = criarPaciente('Ana', 25, '111.222.333-44', 'Tosse', 3);
+let paciente8 = criarPaciente('Pedro', 50, '555.666.777-88', 'Dor abdominal', 2);
+let paciente9 = criarPaciente('Lúcia', 35, '999.888.777-66', 'Mal-estar', 4);
+let paciente10 = criarPaciente('Rafael', 28, '222.333.444-55', 'Dor de garganta', 1);
+let paciente11 = criarPaciente('Fernanda', 48, '777.888.999-00', 'Falta de ar', 5);
+let paciente12 = criarPaciente('Mariana', 32, '333.444.555-66', 'Dor nas articulações', 3);
+let paciente13 = criarPaciente('Diego', 40, '666.555.444-33', 'Náusea', 2);
+let paciente14 = criarPaciente('Carla', 55, '123.456.789-01', 'Dor nas costas', 4);
+let paciente15 = criarPaciente('Roberto', 65, '987.654.321-02', 'Vômito', 5);
+let paciente16 = criarPaciente('Sandra', 38, '456.789.123-03', 'Dor de ouvido', 1);
+let paciente17 = criarPaciente('Lucas', 22, '111.222.333-45', 'Dor nos olhos', 3);
+let paciente18 = criarPaciente('Juliana', 42, '555.666.777-89', 'Tontura', 4);
+let paciente19 = criarPaciente('Marcelo', 33, '999.888.777-67', 'Dor no peito', 2);
+let paciente20 = criarPaciente('Fátima', 52, '222.333.444-56', 'Dor nas pernas', 5);
+
+bancoDeDadosPacientes.push(paciente1)
+bancoDeDadosPacientes.push(paciente2)
+bancoDeDadosPacientes.push(paciente3)
+bancoDeDadosPacientes.push(paciente4)
+bancoDeDadosPacientes.push(paciente5)
+bancoDeDadosPacientes.push(paciente6)
+bancoDeDadosPacientes.push(paciente7)
+bancoDeDadosPacientes.push(paciente8)
+bancoDeDadosPacientes.push(paciente9)
+bancoDeDadosPacientes.push(paciente10)
+bancoDeDadosPacientes.push(paciente11)
+bancoDeDadosPacientes.push(paciente12)
+bancoDeDadosPacientes.push(paciente13)
+bancoDeDadosPacientes.push(paciente14)
+bancoDeDadosPacientes.push(paciente15)
+bancoDeDadosPacientes.push(paciente16)
+bancoDeDadosPacientes.push(paciente17)
+bancoDeDadosPacientes.push(paciente18)
+bancoDeDadosPacientes.push(paciente19)
+bancoDeDadosPacientes.push(paciente20)
+
+console.log("Relatório completo sobre os pacientes:");
+
+bancoDeDadosPacientes.forEach(paciente => {
+    console.log(`Nome: ${paciente.nome}`);
+    console.log(`Idade: ${paciente.idade}`);
+    console.log(`CPF: ${paciente.cpf}`);
+    console.log(`Sintoma: ${paciente.sintoma}`);
+    console.log(`Classificação de Risco: ${paciente.classificacaoRisco}`);
+    console.log(`Situação de Risco: ${paciente.definirSituacaoRisco()}`);
+    console.log("----------------------------------");
+});
